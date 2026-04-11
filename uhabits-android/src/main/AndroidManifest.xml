@@ -95,6 +95,15 @@
         </activity>
 
         <activity
+            android:name=".widgets.activities.QuickActionsHabitPickerDialog"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.Dialog">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".widgets.activities.BooleanHabitPickerDialog"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.Dialog">
@@ -208,6 +217,19 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_target_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widgets.QuickActionsWidgetProvider"
+            android:exported="true"
+            android:label="@string/quick_actions">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_quick_actions_info" />
         </receiver>
 
         <receiver
