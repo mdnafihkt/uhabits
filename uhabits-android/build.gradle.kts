@@ -40,7 +40,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.daimens.uhabits"
+    namespace = "org.isoron.uhabits"
     compileSdk = 36
 
     defaultConfig {

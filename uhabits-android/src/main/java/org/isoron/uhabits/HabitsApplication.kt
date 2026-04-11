@@ -21,6 +21,7 @@ package org.isoron.uhabits
 
 import android.app.Application
 import android.content.Context
+import org.isoron.uhabits.BuildConfig
 import org.isoron.uhabits.core.database.UnsupportedDatabaseVersionException
 import org.isoron.uhabits.core.reminders.ReminderScheduler
 import org.isoron.uhabits.core.ui.NotificationTray

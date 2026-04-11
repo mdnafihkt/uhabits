@@ -22,6 +22,7 @@ import android.content.Context
 import android.os.Build
 import android.os.Environment
 import android.view.WindowManager
+import org.isoron.uhabits.BuildConfig
 import org.isoron.uhabits.inject.AppContext
 import java.io.BufferedReader
 import java.io.File
