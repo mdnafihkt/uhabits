@@ -50,6 +50,7 @@ open class HabitPickerDialog : Activity() {
     private lateinit var widgetPreferences: WidgetPreferences
     private lateinit var widgetUpdater: WidgetUpdater
 
+    protected val habitIds = ArrayList<Long>()
     protected open fun shouldHideNumerical() = false
     protected open fun shouldHideBoolean() = false
     protected open fun getEmptyMessage() = R.string.no_habits
@@ -63,7 +64,6 @@ open class HabitPickerDialog : Activity() {
         widgetUpdater = component.widgetUpdater
         widgetId = intent.extras?.getInt(EXTRA_APPWIDGET_ID, INVALID_APPWIDGET_ID) ?: 0
 
-        val habitIds = ArrayList<Long>()
         val habitNames = ArrayList<String>()
         for (h in habitList) {
             if (h.isArchived) continue

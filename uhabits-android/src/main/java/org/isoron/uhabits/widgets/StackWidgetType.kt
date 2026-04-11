@@ -28,7 +28,7 @@ import java.lang.IllegalStateException
 
 enum class StackWidgetType(val value: Int) {
     CHECKMARK(0), FREQUENCY(1), SCORE(2), // habit strength widget
-    HISTORY(3), STREAKS(4), TARGET(5);
+    HISTORY(3), STREAKS(4), TARGET(5), QUICK_ACTIONS(6);
 
     companion object {
         fun getWidgetTypeFromValue(value: Int): StackWidgetType? {
@@ -39,6 +39,7 @@ enum class StackWidgetType(val value: Int) {
                 HISTORY.value -> HISTORY
                 STREAKS.value -> STREAKS
                 TARGET.value -> TARGET
+                QUICK_ACTIONS.value -> QUICK_ACTIONS
                 else -> null
             }
         }
@@ -51,6 +52,7 @@ enum class StackWidgetType(val value: Int) {
                 HISTORY -> R.layout.history_stackview_widget
                 STREAKS -> R.layout.streak_stackview_widget
                 TARGET -> R.layout.target_stackview_widget
+                QUICK_ACTIONS -> R.layout.quick_actions_listview_widget
                 else -> throw IllegalStateException()
             }
         }
@@ -63,6 +65,7 @@ enum class StackWidgetType(val value: Int) {
                 HISTORY -> R.id.historyStackWidgetView
                 STREAKS -> R.id.streakStackWidgetView
                 TARGET -> R.id.targetStackWidgetView
+                QUICK_ACTIONS -> R.id.quickActionsStackWidgetView
                 else -> throw IllegalStateException()
             }
         }
@@ -75,6 +78,7 @@ enum class StackWidgetType(val value: Int) {
                 HISTORY -> R.id.historyStackWidgetEmptyView
                 STREAKS -> R.id.streakStackWidgetEmptyView
                 TARGET -> R.id.targetStackWidgetEmptyView
+                QUICK_ACTIONS -> R.id.quickActionsStackWidgetEmptyView
                 else -> throw IllegalStateException()
             }
         }
@@ -86,7 +90,7 @@ enum class StackWidgetType(val value: Int) {
         ): PendingIntent {
             val containsNumerical = habits.any { it.isNumerical }
             return when (widgetType) {
-                CHECKMARK -> if (containsNumerical) {
+                CHECKMARK, QUICK_ACTIONS -> if (containsNumerical) {
                     factory.showNumberPickerTemplate()
                 } else {
                     factory.toggleCheckmarkTemplate()
@@ -104,7 +108,7 @@ enum class StackWidgetType(val value: Int) {
         ): Intent {
             val containsNumerical = allHabitsInStackWidget.any { it.isNumerical }
             return when (widgetType) {
-                CHECKMARK -> if (containsNumerical) {
+                CHECKMARK, QUICK_ACTIONS -> if (containsNumerical) {
                     factory.showNumberPickerFillIn(habit, timestamp)
                 } else {
                     factory.toggleCheckmarkFillIn(habit, timestamp)

@@ -126,6 +126,7 @@ internal class StackRemoteViewsFactory(private val context: Context, intent: Int
             StackWidgetType.HISTORY -> HistoryWidget(context, widgetId, habit, true)
             StackWidgetType.STREAKS -> StreakWidget(context, widgetId, habit, true)
             StackWidgetType.TARGET -> TargetWidget(context, widgetId, habit, true)
+            StackWidgetType.QUICK_ACTIONS -> QuickActionsWidget(context, widgetId, habit, true)
         }
     }
 
