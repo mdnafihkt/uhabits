@@ -95,8 +95,14 @@ class WidgetUpdater
 
         val modifiedWidgetIds = when (modifiedHabitId) {
             null -> widgetIds.toList()
-            else -> widgetIds.filter { w ->
-                widgetPrefs.getHabitIdsFromWidgetId(w).contains(modifiedHabitId)
+            else -> {
+                if (providerClass == QuickActionsWidgetProvider::class.java) {
+                    widgetIds.toList()
+                } else {
+                    widgetIds.filter { w ->
+                        widgetPrefs.getHabitIdsFromWidgetId(w).contains(modifiedHabitId)
+                    }
+                }
             }
         }
 

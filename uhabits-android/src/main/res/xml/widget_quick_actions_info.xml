@@ -6,6 +6,5 @@
     android:updatePeriodMillis="0"
     android:resizeMode="horizontal|vertical"
     android:previewImage="@drawable/widget_preview_quick_actions"
-    android:configure="org.isoron.uhabits.widgets.activities.QuickActionsHabitPickerDialog"
     android:widgetCategory="home_screen">
 </appwidget-provider>

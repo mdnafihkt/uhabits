@@ -4,7 +4,8 @@ import android.content.Context
 
 class QuickActionsWidgetProvider : BaseWidgetProvider() {
     override fun getWidgetFromId(context: Context, id: Int): BaseWidget {
-        val habits = getHabitsFromWidgetId(id)
+        val application = context.applicationContext as org.isoron.uhabits.HabitsApplication
+        val habits = application.component.habitList.filter { !it.isArchived }
         return if (habits.size == 1) {
             QuickActionsWidget(context, id, habits[0])
         } else {

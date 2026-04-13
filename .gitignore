@@ -18,3 +18,5 @@ node_modules
 *.sketch
 crowdin.yml
 kotlin-js-store
+uhabits-core/bin/
+uhabits-android/release/
