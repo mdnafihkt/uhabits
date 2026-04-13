@@ -106,7 +106,11 @@ internal class StackRemoteViewsFactory(private val context: Context, intent: Int
         portraitViews.setOnClickFillInIntent(R.id.button, intent)
         val remoteViews = RemoteViews(landscapeViews, portraitViews)
         Log.i("StackRemoteViewsFactory", "getViewAt $position ended")
-        return remoteViews
+        Log.i("StackRemoteViewsFactory", "widgetId: $widgetId type: $widgetType")
+        return if (widgetType == StackWidgetType.QUICK_ACTIONS)
+            portraitViews
+        else
+            remoteViews
     }
 
     private fun constructWidget(
