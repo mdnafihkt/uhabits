@@ -7,21 +7,9 @@
     android:gravity="center_vertical"
     android:paddingStart="12dp"
     android:paddingEnd="12dp"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp"
     android:background="@drawable/widget_button_background">
-
-    <!-- Habit Name -->
-    <TextView
-        android:id="@+id/textHabitName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:maxLines="1"
-        android:ellipsize="end" />
 
     <!-- Status Icon -->
     <ImageView
@@ -38,5 +26,16 @@
         android:textSize="16sp"
         android:paddingRight="10dp"
         android:layout_marginStart="8dp"/>
+    <!-- Habit Name -->
+    <TextView
+        android:id="@+id/textHabitName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:maxLines="1"
+        android:ellipsize="end" />
 
 </LinearLayout>

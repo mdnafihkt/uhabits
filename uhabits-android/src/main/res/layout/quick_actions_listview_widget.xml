@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:clipToOutline="true"
     android:background="@drawable/widget_quick_actions_bg">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="uHabits"
+        android:padding="16dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="@android:color/transparent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
 
     <ListView
         android:id="@+id/quickActionsStackWidgetView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:background="@android:color/transparent"
         android:divider="@android:color/transparent"
         android:dividerHeight="4dp"
@@ -21,8 +39,9 @@
         android:layout_height="match_parent"
         android:text="No habits"
         android:textColor="#ffffff"
-        android:textStyle="bold"
+        android:textStyle="normal"
         android:gravity="center"
         android:textSize="16sp" />
+    </FrameLayout>
 
-</FrameLayout>
+</LinearLayout>
