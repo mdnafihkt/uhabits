@@ -44,8 +44,8 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        versionCode = 20303
-        versionName = "2.4.1"
+        versionCode = 20304
+        versionName = "2.4.2"
         minSdk = 28
         targetSdk = 36
         applicationId = "com.daimens.uhabits"
