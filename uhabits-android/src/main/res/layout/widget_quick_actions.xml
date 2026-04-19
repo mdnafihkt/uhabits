@@ -16,16 +16,20 @@
         android:id="@+id/imageStatus"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginStart="8dp"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        />
 
     <TextView
         android:id="@+id/textStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:paddingRight="10dp"
-        android:layout_marginStart="8dp"/>
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"/>
+
     <!-- Habit Name -->
     <TextView
         android:id="@+id/textHabitName"
@@ -33,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textSize="18sp"
-        android:textStyle="bold"
+        android:textStyle="normal"
         android:textColor="@android:color/white"
         android:maxLines="1"
         android:ellipsize="end" />

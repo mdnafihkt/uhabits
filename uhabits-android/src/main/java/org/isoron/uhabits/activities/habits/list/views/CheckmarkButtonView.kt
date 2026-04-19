@@ -43,6 +43,7 @@ import org.isoron.uhabits.utils.sp
 import org.isoron.uhabits.utils.sres
 import org.isoron.uhabits.utils.toMeasureSpec
 import javax.inject.Inject
+import androidx.core.graphics.toColorInt
 
 class CheckmarkButtonViewFactory
 @Inject constructor(
@@ -146,13 +147,7 @@ class CheckmarkButtonView(
         fun draw(canvas: Canvas) {
             paint.color = when (value) {
                 YES_MANUAL, YES_AUTO, SKIP -> color
-                NO -> {
-                    if (preferences.areQuestionMarksEnabled) {
-                        mediumContrastColor
-                    } else {
-                        lowContrastColor
-                    }
-                }
+                NO -> "#ff7575".toColorInt()
                 else -> lowContrastColor
             }
             val id = when (value) {
