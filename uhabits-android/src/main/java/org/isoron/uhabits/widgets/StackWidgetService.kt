@@ -94,7 +94,8 @@ internal class StackRemoteViewsFactory(private val context: Context, intent: Int
         val habitList = app.component.habitList
         val options = AppWidgetManager.getInstance(context).getAppWidgetOptions(widgetId)
         if (Looper.myLooper() == null) Looper.prepare()
-        val habits = habitIds.map { habitList.getById(it) ?: throw HabitNotFoundException() }
+        val habits = habitIds.toList().mapNotNull { habitList.getById(it) }
+        if (position >= habits.size) return null
         val h = habits[position]
         val widget = constructWidget(h, prefs)
         widget.setDimensions(getDimensionsFromOptions(context, options))
