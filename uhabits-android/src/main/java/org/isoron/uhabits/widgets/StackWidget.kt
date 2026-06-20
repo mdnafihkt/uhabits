@@ -27,6 +27,7 @@ import android.net.Uri
 import android.view.View
 import android.widget.RemoteViews
 import org.isoron.platform.utils.StringUtils
+import org.isoron.uhabits.R
 import org.isoron.uhabits.core.models.Habit
 
 class StackWidget(
@@ -77,6 +78,9 @@ class StackWidget(
             StackWidgetType.getStackWidgetAdapterViewId(widgetType),
             StackWidgetType.getPendingIntentTemplate(pendingIntentFactory, widgetType, habits)
         )
+        if (widgetType == StackWidgetType.QUICK_ACTIONS) {
+            remoteViews.setOnClickPendingIntent(R.id.textWidgetTitle, pendingIntentFactory.showListHabits())
+        }
         return remoteViews
     }
 }
