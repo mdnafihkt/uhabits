@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:clipToOutline="true"
-    android:background="@drawable/widget_quick_actions_bg">
+    android:background="@drawable/widget_quick_actions_bg"
+    android:elevation="8dp">
 
     <TextView
         android:layout_width="match_parent"
