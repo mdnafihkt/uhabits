@@ -16,7 +16,9 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:background="@android:color/transparent" />
+        android:background="@android:color/black"
+        android:drawableEnd="@drawable/open_in_new"
+        android:drawablePadding="8dp" />
 
     <FrameLayout
         android:layout_width="match_parent"
