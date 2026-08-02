@@ -209,18 +209,19 @@ class HistoryChart(
         val squareColor: Color
         val circleColor: Color
         val color = theme.color(paletteColor.paletteIndex)
+        val doneColor = Color(0xFF53BC85.toInt())
+        val notDoneColor = Color(0xFFEC7666.toInt())
+        val unmarkedColor = theme.lowContrastTextColor
+
         squareColor = when (value) {
-            Square.ON -> {
-                color
+            Square.ON, Square.DIMMED -> {
+                doneColor
             }
             Square.OFF -> {
-                theme.lowContrastTextColor
+                notDoneColor
             }
-            Square.GREY -> {
-                theme.mediumContrastTextColor
-            }
-            Square.DIMMED, Square.HATCHED -> {
-                color.blendWith(theme.cardBackgroundColor, 0.5)
+            Square.GREY, Square.HATCHED -> {
+                unmarkedColor
             }
         }
 

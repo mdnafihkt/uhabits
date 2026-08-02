@@ -165,11 +165,11 @@ class HistoryCardPresenter(
             val series = if (habit.isNumerical) {
                 entries.map {
                     when {
-                        it.value == Entry.UNKNOWN -> OFF
+                        it.value == Entry.UNKNOWN -> GREY
                         it.value == SKIP -> HATCHED
                         (habit.targetType == AT_MOST) && (it.value / 1000.0 <= habit.targetValue) -> ON
                         (habit.targetType == AT_LEAST) && (it.value / 1000.0 >= habit.targetValue) -> ON
-                        else -> GREY
+                        else -> OFF
                     }
                 }
             } else {
@@ -178,7 +178,8 @@ class HistoryCardPresenter(
                         YES_MANUAL -> ON
                         YES_AUTO -> DIMMED
                         SKIP -> HATCHED
-                        else -> OFF
+                        Entry.NO -> OFF
+                        else -> GREY
                     }
                 }
             }
